@@ -1,0 +1,11 @@
+## Spring actuator config
+spring:
+  endpoints:
+    actuator:
+      enabled: true
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: refresh
+
