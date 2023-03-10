@@ -1,9 +1,8 @@
 buildscript{
     ext{
-        springBootVersion = '2.3.1.RELEASE'
-        springBootdependency = '1.0.9.RELEASE'
-        queryDslVersion = '4.4.0'
-        set('springCloudVersion', "Hoxton.SR7")
+        springBootVersion = '2.6.7'
+        springBootdependency = '1.0.11.RELEASE'
+        set('springCloudVersion', "2021.0.1")
     }
     repositories {
         mavenCentral()
@@ -23,8 +22,8 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = '17'
+targetCompatibility = '17'
 
 
 eclipse {
@@ -58,9 +57,9 @@ dependencies {
     implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
     implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
     implementation files ('libs/ojdbc8-12.2.0.1.jar')
-    annotationProcessor ("org.projectlombok:lombok")
+    annotationProcessor ("org.projectlombok:lombok:1.18.20")
     developmentOnly ("org.springframework.boot:spring-boot-devtools")
-    compileOnly ("org.projectlombok:lombok")
+    compileOnly ("org.projectlombok:lombok:1.18.20")
     testImplementation ("org.springframework.boot:spring-boot-starter-test")
 
     bootRun{

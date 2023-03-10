@@ -29,7 +29,7 @@ public class SchedulerService {
 
     //run thread everySeconds
     @Scheduled(fixedDelay=1000)
-    public void findUnfinishedTrsc () throws URISyntaxException {
+    public String findUnfinishedTrsc () throws URISyntaxException {
 
         //Find the transaction which haven't been received for 23H
         List<TrnfHis> trnfHisList = daoTrnfHis.findUnfinishedTrsc();
@@ -48,6 +48,8 @@ public class SchedulerService {
             ExtKakaoApiNotifOutput output =  restTemplate.postMessage(receiver,message);
             log.debug("### send notification for {} receiver from {} unfinished transaction", output.getReceiver_uuids().size(), receiver.size());
         }
+
+        return "";
 
     }
 
@@ -77,7 +79,8 @@ public class SchedulerService {
             String retVal;
             log.debug("### send notification for {} sender from {} unfinished transaction", outputSend.getReceiver_uuids().size(), sender.size());
             log.debug("### send notification for {} receiver from {} unfinished transaction", outputRec.getReceiver_uuids().size(), receiver.size());
-            return
+
         }
+        return ""; //임시
     }
 }

@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 
 
 
-@Data @Builder
+@Data
 @AllArgsConstructor @EqualsAndHashCode(callSuper=false) //lombok
 @IdClass(ApiMsgHisPk.class)
 @Entity @Table(name="API_MSG_HIS") //JPA

@@ -1,5 +1,9 @@
 ## Spring actuator config
 spring:
+  application:
+    name: transfer
+#  profiles:
+#    active: local
   endpoints:
     actuator:
       enabled: true
@@ -8,4 +12,7 @@ spring:
       web:
         exposure:
           include: refresh
+  config:
+    import: "optional:configserver:"
+    use-legacy-processing: true
 
