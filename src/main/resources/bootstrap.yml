@@ -1,6 +1,6 @@
 ## Spring Configuration
 server:
-  port: 8080
+  port: 8087
 
 ## Spring cloud config server Configuration
 spring:
@@ -23,6 +23,10 @@ spring:
     properties:
       hibernate:
         show-sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
   security:
     basic:
       enable: false
