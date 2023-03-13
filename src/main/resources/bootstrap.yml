@@ -27,6 +27,9 @@ spring:
     console:
       enabled: true
       path: /h2-console
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
   security:
     basic:
       enable: false

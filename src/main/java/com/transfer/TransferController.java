@@ -8,7 +8,7 @@ import com.transfer.module.CommonResponse;
 import com.transfer.service.DepositService;
 
 import com.transfer.service.SchedulerService;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,8 +23,8 @@ public class TransferController {
     private final DepositService depositService;
     private final SchedulerService schedulerService;
 
-    @PostMapping(value="/BalCheck")
-    @ApiOperation(value="Check Balance", notes="Check Balance")
+    @PostMapping("/BalCheck")
+    @Operation(summary="Check Balance", description="Check Balance")
     public ResponseEntity<?> balCheck(@RequestBody @Valid BalCheckInput balCheckInput) throws URISyntaxException {
 
         CommonResponse<Object> commonResponseDto = CommonResponse.builder()
@@ -33,8 +33,8 @@ public class TransferController {
         return ResponseEntity.ok(commonResponseDto);
     }
 
-    @PostMapping(value="/TrscReq")
-    @ApiOperation(value="Transaction Request", notes="Transaction Request")
+    @PostMapping("/TrscReq")
+    @Operation(summary="Transaction Request", description="Transaction Request")
     public ResponseEntity<?> trscReq(@RequestBody @Valid TrscReqInput trscReqInput) throws URISyntaxException {
 
         CommonResponse<Object> commonResponseDto = CommonResponse.builder()
@@ -43,8 +43,8 @@ public class TransferController {
         return ResponseEntity.ok(commonResponseDto);
     }
 
-    @PostMapping(value="/TrscConfirm")
-    @ApiOperation(value="Transaction Confirm", notes="Transaction Confirm")
+    @PostMapping("/TrscConfirm")
+    @Operation(summary="Transaction Confirm", description="Transaction Confirm")
     public ResponseEntity<?> trscConfirm(@RequestBody @Valid TrscConfirmInput trscConfirmInput) throws URISyntaxException {
 
         CommonResponse<Object> commonResponseDto = CommonResponse.builder()
@@ -53,8 +53,8 @@ public class TransferController {
         return ResponseEntity.ok(commonResponseDto);
     }
 
-    @PostMapping(value="/CheckHis")
-    @ApiOperation(value="Check History", notes="Check History")
+    @PostMapping("/CheckHis")
+    @Operation(summary="Check History", description="Check History")
     public ResponseEntity<?> checkHis(@RequestBody @Valid CheckHisInput checkHisInput) throws URISyntaxException {
 
         CommonResponse<Object> commonResponseDto = CommonResponse.builder()
@@ -64,7 +64,7 @@ public class TransferController {
     }
 
     @PostMapping(value="/FindUnfinishedTrsc")
-    @ApiOperation(value="Find Unfinished Transaction", notes="Find Unfinished Transaction")
+    @Operation(summary="Find Unfinished Transaction", description="Find Unfinished Transaction")
     public ResponseEntity<?> findUnfinishedTrsc() throws URISyntaxException {
 
         CommonResponse<Object> commonResponseDto = CommonResponse.builder()
