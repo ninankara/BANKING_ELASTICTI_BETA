@@ -1,4 +1,8 @@
 ## Spring actuator config
+server:
+  shutdown: graceful
+  error:
+    whitelabel.enabled: false
 spring:
   application:
     name: transfer
