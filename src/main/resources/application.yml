@@ -2,8 +2,8 @@
 spring:
   application:
     name: transfer
-#  profiles:
-#    active: local
+  profiles:
+    active: prod
   endpoints:
     actuator:
       enabled: true

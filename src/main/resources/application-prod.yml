@@ -1,0 +1,12 @@
+server:
+  port: 8443
+  ssl:
+    enabled: true
+    key-store: /etc/letsencrypts/copsvr.mooo.com/keystore.p12
+    key-store-password: cop9lobal1!
+    keyStoreType: PKCS12
+    keyAlias: springkey
+    security:
+
+spring:
+  profiles: prod
