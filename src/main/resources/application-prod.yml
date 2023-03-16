@@ -2,8 +2,10 @@ server:
   port: 8443
   ssl:
     enabled: true
-    key-store: /etc/letsencrypts/copsvr.mooo.com/keystore.p12
-    key-store-password: cop9lobal1!
+    key-store:
+      classpath: keystore.jks
+    key-store-password: ${KEY-STORE-PASSWORD}
+    key-password: ${KEY-PASSWORD}
     keyStoreType: PKCS12
     keyAlias: springkey
     security:
