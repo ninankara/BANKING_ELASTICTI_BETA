@@ -3,11 +3,10 @@ server:
   ssl:
     enabled: true
     key-store: classpath:keystore.jks
-    key-store-password: ${KEY-STORE-PASSWORD}
-    key-password: ${KEY-PASSWORD}
+    key-store-password: ${KEYSTOREPASSWORD}
+    key-password: ${KEYPASSWORD}
     key-store-type: PKCS12
     key-alias: springkey
-    security:
 
 spring:
   profiles: prod
